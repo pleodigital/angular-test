@@ -1,0 +1,16 @@
+<h3>Samochody:</h3>
+
+<table>
+  <thead>
+  <th>Marka</th>
+  <th>Model</th>
+  <th>Rok produkcji</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let car of cars">
+    <td>{{ car.brand }}</td>
+    <td>{{ car.model }}</td>
+    <td>{{ car.year }}</td>
+  </tr>
+  </tbody>
+</table>

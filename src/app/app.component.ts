@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {SimpleServiceService} from './simple-service.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'before-test';
+
+  constructor(private readonly simpleServiceService: SimpleServiceService) {
+  }
+
+  onCallRxJsSubject() {
+    const randomNumber = Math.round(Math.random() * 100);
+    this.simpleServiceService.randomNumberSubject.next(randomNumber);
+  }
 }
